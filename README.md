@@ -22,7 +22,7 @@
 ## Jenkins job
 Jenkins is an automation server which lets us run tests
 
-Click <a target="_blank" href="https://jenkins.autotests.cloud/job/BrowserstackMobileTests/">here</a> to see the job for Wikipedia app.
+Click <a target="_blank" href="https://jenkins.autotests.cloud/job/mobile_tests_18/">here</a> to see the job for Wikipedia app.
 
 <p align="center">
 <img title="Jenkins job" src="images/Jenkins.svg" width="50" height="50">
@@ -31,7 +31,7 @@ Click <a target="_blank" href="https://jenkins.autotests.cloud/job/BrowserstackM
 ## Allure report
 Allure Framework is a flexible test report tool that shows a concise representation of what have been tested in a neat web report form
 
-Click <a target="_blank" href="https://jenkins.autotests.cloud/job/BrowserstackMobileTests/21/allure/">here</a> to see the report of the tests
+Click <a target="_blank" href="https://jenkins.autotests.cloud/job/mobile_tests_18/allure/">here</a> to see the report of the tests
 
 Here are the graphs:
 

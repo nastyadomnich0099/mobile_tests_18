@@ -10,12 +10,12 @@ public class BrowserStack {
     public static String videoUrl(String sessionId) {
         String url = format("https://api.browserstack.com/app-automate/sessions/%s.json", sessionId);
 
-//        CredConfig config = ConfigFactory.create(CredConfig.class, System.getProperties());
-//        String login = config.login();
-//        String password = config.password();
+        CredConfig config = ConfigFactory.create(CredConfig.class, System.getProperties());
+        String login = config.login();
+        String password = config.password();
 
         return given()
-                .auth().basic("dopik_n0Isgm", "ahiaWEYwHmYJWdAWFDBr")
+                .auth().basic(config.login(), config.password())
                 .log().all()
                 .when()
                 .get(url)

@@ -2,6 +2,7 @@ package test;
 
 
 import io.appium.java_client.AppiumBy;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
@@ -13,6 +14,7 @@ import static io.qameta.allure.Allure.step;
 import org.junit.jupiter.api.DisplayName;
 
 public class AndroidSearchTests extends TestBase{
+    @Tag("mobile")
     @Test
     @DisplayName("Mobile search test for Wikipedia")
     void searchTest() {
@@ -26,19 +28,20 @@ public class AndroidSearchTests extends TestBase{
                         .shouldHave(sizeGreaterThan(0)));
 
     }
-
+    @Tag("mobile")
     @Test
-    @DisplayName("First letter D search result")
+    @DisplayName("First NFTY search result")
     void LetterSearch() {
         step("Letter D type search", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
-            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("D");
+            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("NFTY");
         });
         step("Check first result", () -> {
-            $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_description")).shouldHave(text("Letter of the Latin alphabet"));
+            $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_description")).shouldHave(text("Reform Jewish youth organization"));
         });
     }
 
+    @Tag("mobile")
     @Test
     @DisplayName("Wiki main page news")
     void wikiPage() {
@@ -49,6 +52,7 @@ public class AndroidSearchTests extends TestBase{
 
     }
 
+    @Tag("mobile")
     @Test
     @DisplayName("Hide this card feature")
     void hideThisCard() {
@@ -62,6 +66,7 @@ public class AndroidSearchTests extends TestBase{
 
     }
 
+    @Tag("mobile")
     @Test
     @DisplayName("Language settings")
     void settingsTest() {

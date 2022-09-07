@@ -17,17 +17,17 @@ public class BrowserstackMobileDrivers implements WebDriverProvider{
     @Override
     public WebDriver createDriver(Capabilities capabilities) {
 
-//        CredConfig config = ConfigFactory.create(CredConfig.class, System.getProperties());
+        CredConfig config = ConfigFactory.create(CredConfig.class, System.getProperties());
 //        String login = config.login();
 //        String password = config.password();
-//        String app = config.app();
+//        String app = config.app();x
 
 
         MutableCapabilities mutableCapabilities = new MutableCapabilities();
         mutableCapabilities.merge(capabilities);
-        mutableCapabilities.setCapability("browserstack.user", "dopik_n0Isgm");
-        mutableCapabilities.setCapability("browserstack.key", "ahiaWEYwHmYJWdAWFDBr");
-        mutableCapabilities.setCapability("app","bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
+        mutableCapabilities.setCapability("browserstack.user", config.login());
+        mutableCapabilities.setCapability("browserstack.key", config.password());
+        mutableCapabilities.setCapability("app", config.app());
         mutableCapabilities.setCapability("device", "Samsung Galaxy S22");
         mutableCapabilities.setCapability("os_version", "12.0");
         mutableCapabilities.setCapability("project", "First Java Project");

@@ -21,7 +21,7 @@ public class AndroidSearchTests extends TestBase{
         step("Type search", () -> {
             $(AppiumBy.accessibilityId("Search Wikipedia")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text"))
-                    .sendKeys("BrowserStack");
+                    .sendKeys("Video");
         });
         step("Verify content found", () ->
                 $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
@@ -41,6 +41,8 @@ public class AndroidSearchTests extends TestBase{
         });
     }
 
+
+    //CHECK WHAT GOES WRONG
     @Tag("mobile")
     @Test
     @DisplayName("Wiki main page news")
@@ -77,14 +79,14 @@ public class AndroidSearchTests extends TestBase{
         step("Click on Wikipedia language settings", () -> {
             $(AppiumBy.id("android:id/title")).click();
         });
-        step("Search for French language", () -> {
-            $(AppiumBy.id("org.wikipedia.alpha:id/preference_languages_filter")).sendKeys("French");
+        step("Search for Deutsch language", () -> {
+            $(AppiumBy.id("org.wikipedia.alpha:id/preference_languages_filter")).sendKeys("Deutsch");
         });
-        step("Setup French language", () -> {
+        step("Setup Deutsch language", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/language_subtitle")).click();
         });
         step("Check that we got selected language in settings", () -> {
-            $(AppiumBy.id("android:id/summary")).shouldHave(exactText("Français"));
+            $(AppiumBy.id("android:id/summary")).shouldHave(exactText("Deutsch"));
         });
 
 

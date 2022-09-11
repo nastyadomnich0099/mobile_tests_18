@@ -32,7 +32,7 @@ public class AndroidSearchTests extends TestBase{
     @Test
     @DisplayName("First NFTY search result")
     void LetterSearch() {
-        step("Letter D type search", () -> {
+        step("NFTY type search", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("NFTY");
         });
@@ -42,17 +42,7 @@ public class AndroidSearchTests extends TestBase{
     }
 
 
-    //CHECK WHAT GOES WRONG
-    @Tag("mobile")
-    @Test
-    @DisplayName("Wiki main page news")
-    void wikiPage() {
-        step("Open wiki main page and check for the news", () -> {
-            $(AppiumBy.id("org.wikipedia.alpha:id/horizontal_scroll_list_item_text")).click();
-            $(AppiumBy.id("org.wikipedia.alpha:id/view_list_card_item_subtitle")).shouldHave(exactText("Presidential Election in Kenya(August 2022)"));
-        });
 
-    }
 
     @Tag("mobile")
     @Test

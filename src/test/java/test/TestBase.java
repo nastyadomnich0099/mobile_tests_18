@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.Attach.sessionId;
-import static io.qameta.allure.Allure.step;
+
 
 public class TestBase {
     @BeforeAll

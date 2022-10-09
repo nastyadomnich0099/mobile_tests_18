@@ -15,7 +15,7 @@ public class BrowserStack {
         String password = config.password();
 
         return given()
-                .auth().basic(config.login(), config.password())
+                .auth().basic(login, password)
                 .log().all()
                 .when()
                 .get(url)

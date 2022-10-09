@@ -1,6 +1,5 @@
 package test;
 
-
 import io.appium.java_client.AppiumBy;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -11,9 +10,10 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static io.qameta.allure.Allure.step;
+
 import org.junit.jupiter.api.DisplayName;
 
-public class AndroidSearchTests extends TestBase{
+public class AndroidSearchTests extends TestBase {
     @Tag("mobile")
     @Test
     @DisplayName("Mobile search test for Wikipedia")
@@ -26,8 +26,8 @@ public class AndroidSearchTests extends TestBase{
         step("Verify content found", () ->
                 $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
                         .shouldHave(sizeGreaterThan(0)));
-
     }
+
     @Tag("mobile")
     @Test
     @DisplayName("First NFTY search result")
@@ -41,9 +41,6 @@ public class AndroidSearchTests extends TestBase{
         });
     }
 
-
-
-
     @Tag("mobile")
     @Test
     @DisplayName("Hide this card feature")
@@ -55,7 +52,6 @@ public class AndroidSearchTests extends TestBase{
             $(AppiumBy.id("org.wikipedia.alpha:id/title")).shouldHave(exactText("Hide this card"));
             $(AppiumBy.id("org.wikipedia.alpha:id/title")).click();
         });
-
     }
 
     @Tag("mobile")
@@ -78,10 +74,5 @@ public class AndroidSearchTests extends TestBase{
         step("Check that we got selected language in settings", () -> {
             $(AppiumBy.id("android:id/summary")).shouldHave(exactText("Deutsch"));
         });
-
-
     }
-
-
-
 }
